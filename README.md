@@ -1,10 +1,8 @@
 Codefights solutions
 ============================
-I'm collecting my https://codefights.com/ solutions in this repo for PHP programming language
+In this repo I'm collecting my https://codefights.com/ solutions written in PHP
 
-It might help to somebody looking for the solution or it might improve my skills when I recieve a feedback ;)
+It might help to somebody looking for the solution or it might improve my knowledge when I recieve a feedback ;)
 
-- Codefights solutions in golang: https://github.com/tomor/codefights-go
-
-## TODO
-- create notes howto setup idea project and GVM so that this works and can be started
+# Codefights solutions in other languages
+- Golang: https://github.com/tomor/codefights-go
