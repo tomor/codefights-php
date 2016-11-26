@@ -28,9 +28,16 @@ Constraints:
 
 // this method must be 1 line
 function secondRightmostZeroBit($n) {
-//    return secondRightmostZeroFirstAttempt($n); // 1st solution with function
-//    return leastXSignificantZero($n, 2);        // 2nd solution with functions
-    return ~$n - (~$n & (~$n-((~$n-(~$n & ~$n-1))))-1); // 3rd solution based on 2nd solution
+//    return secondRightmostZeroFirstAttempt($n);         // 1st solution with function
+//    return leastXSignificantZero($n, 2);                // 2nd solution with functions
+//    return ~$n - (~$n & (~$n-((~$n-(~$n & ~$n-1))))-1); // 3rd solution based on 2nd solution in 1 line
+
+    // Another solution created after reading
+    // http://www.catonmat.net/blog/low-level-bit-hacks-you-absolutely-must-know/
+    // Needed tricks:
+    // Turn on the rightmost 0-bit: y = x | (x+1)
+    // Isolate the rightmost 0-bit: y = ~x & (x+1)
+    return ~($n | ($n+1)) & (($n | ($n+1)) + 1);
 }
 
 /**
@@ -59,7 +66,7 @@ function leastXSignificantBit($n, $x) {
     $found = 0;
 
     for ($i=0; $i<$x; $i++) {
-        $found = leastSignificantBit($n);
+        $found = leastSignificantBit2($n);
         $n = $n - $found;
     }
 
@@ -80,6 +87,12 @@ function leastSignificantBit($n) {
     return ($n - ($n & $n-1));
 }
 
+/**
+ * This works the same way as previous function because -n = ~(n-1)
+ */
+function leastSignificantBit2($n) {
+    return $n & (-$n);
+}
 
 /**
  * Returns binary number which starts with 1 where the second rightmost
@@ -115,4 +128,3 @@ function secondRightmostZeroFirstAttempt($n) {
 
 echo decbin(secondRightmostZeroBit(0b101001));       // result : 0b10
 //echo decbin(secondRightmostZeroBit(0b1110010));   // result : 0b100
-
