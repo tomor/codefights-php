@@ -6,11 +6,8 @@ It might help to somebody looking for the solution or it might improve my knowle
 
 ## Arcade levels
 The core
-|
 - Intro Gates
-|
 - At the Crossroads
-|
 - Corner of 0s and 1s - Loop Tunnel - List Forest Edge
 
 
