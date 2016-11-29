@@ -6,9 +6,9 @@ It might help to somebody looking for the solution or it might improve my knowle
 
 ## Arcade levels
 **The Core**
-- Intro Gates
-- At the Crossroads
-- Corner of 0s and 1s | Loop Tunnel | List Forest Edge
+- 1. Intro Gates
+- 2. At the Crossroads
+- 3. Corner of 0s and 1s | Loop Tunnel | List Forest Edge
 
 
 ### Codefights solutions in other languages
