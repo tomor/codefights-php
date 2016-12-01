@@ -39,6 +39,7 @@ r - l ≤ 106.
 [output] integer
  */
 
+// Math solution
 function countSumOfTwoRepresentations2($n, $l, $r) {
     $minA = $l;
     $maxA = $r;
@@ -64,4 +65,19 @@ function countSumOfTwoRepresentations2($n, $l, $r) {
     } else {
         return 0;
     }
+}
+
+// Loop solution
+function countSumOfTwoRepresentationsLoop($n, $l, $r) {
+    $count = 0;
+
+    for ($a=$l; $a<=$r; $a++) {
+        for ($b=$a; $b<=$r; $b++) {
+            if (($a+$b) == $n) {
+                $count++;
+            }
+        }
+    }
+
+    return $count;
 }
