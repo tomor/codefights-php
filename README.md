@@ -6,9 +6,9 @@ It might help to somebody looking for the solution or it might improve my knowle
 
 ## Arcade levels
 **The Core**
-- 1. Intro Gates
-- 2. At the Crossroads
-- 3. Corner of 0s and 1s | Loop Tunnel | List Forest Edge
+- 1. [Intro Gates](https://github.com/tomor/codefights-php/tree/master/Arcade/IntroGates)
+- 2. [At the Crossroads](https://github.com/tomor/codefights-php/tree/master/Arcade/AtTheCrossroads)
+- 3. [Corner of 0s and 1s](https://github.com/tomor/codefights-php/tree/master/Arcade/CornerOf0sAnd1s) | [Loop Tunnel](https://github.com/tomor/codefights-php/tree/master/Arcade/LoopTunnel) | [List Forest Edge](https://github.com/tomor/codefights-php/tree/master/Arcade/ListForestEdge)
 
 
 ### Codefights solutions in other languages
