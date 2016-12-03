@@ -45,19 +45,15 @@ Constraints:
 
 function candles($candlesNumber, $makeNew) {
     $leftovers    = 0;
-    $totalCandles = 0;
-    $newCandles   = 1; //init to be able to start the while loop
+    $totalCandles = $candlesNumber;
 
-    // $candlesNumber variable holds actual amount of candles we currently have
-    while ($newCandles >= 1) {
+    while ($candlesNumber >= 1) {
+        $leftovers    += $candlesNumber;             // burn candles and count leftovers
+        $candlesNumber = floor($leftovers/$makeNew); // create new candles from leftovers
+        $leftovers    -= ($candlesNumber*$makeNew);  // decrease leftowers because new candles were created
         $totalCandles += $candlesNumber;
-        $leftovers    += $candlesNumber;            // how many leftowers do we have in this round? - same as candles
-        $candlesNumber = 0;                         // all burned
-        $newCandles    = floor($leftovers/$makeNew);// create new candles
-        $leftovers    -= ($newCandles*$makeNew);    // decrease leftowers because new candles were created
-        $candlesNumber = $newCandles;               
     }
-    
+
     return $totalCandles;
 }
 
