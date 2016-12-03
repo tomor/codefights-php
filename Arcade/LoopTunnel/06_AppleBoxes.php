@@ -32,17 +32,25 @@ Constraints:
 The difference between the two types of apples.
  */
 
-function appleBoxes($k) {
-    $even = 0;
-    $odd  = 0;
-    
-    for ($i=1; $i<=$k; $i++) {
-        if (($i % 2) == 1) {
-            $odd += $i*$i;
-        } else {
-            $even += $i*$i;
+function increaseNumberRoundness($n) {
+    $nonZeroFound = false;
+    $digit        = null;
+
+    // to increase roundnes we need to find (from right to left)
+    // at first a non-zero digit and then a zero
+    while ($n) {
+        $digit = $n % 10; // get the most rigth digit
+
+        if ($digit !== 0) {
+            $nonZeroFound = true; // find the first non-zero digit
         }
+        
+        if ($nonZeroFound && $digit === 0) {
+            return true;
+        }
+
+        $n = ($n-$digit)/10; // remove the last digit from the number
     }
-    
-    return $even - $odd;
+
+    return false;
 }
