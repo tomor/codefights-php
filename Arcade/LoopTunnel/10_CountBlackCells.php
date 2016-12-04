@@ -92,6 +92,8 @@ function countBlackCells($n, $m) {
             }
         }
 
+        echo "row: $row, column: $column, in line: $crossedInLine, total: $crossed \n";
+
         // in next row we don't have to start to search from the beginning - skip few
         $columnStart = $columnStart + $crossedInLine - 2;
     }
@@ -100,10 +102,7 @@ function countBlackCells($n, $m) {
 }
 
 
-//echo "fast: ".countBlackCells(3, 4)."\n";
-//echo "fast: ".countBlackCells(2, 10)."\n";
-echo "slow: ".countBlackCells(33, 44)."\n";
-//echo countBlackCells(66, 2000);
+echo "slow: ".countBlackCells(33000, 44000)."\n";
 
 
 
