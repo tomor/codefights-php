@@ -54,12 +54,14 @@ function countBlackCells($n, $m) {
     $crossed = 0;
     $columnStart = 0;
 
+    $inOneLineMin = ceil($m/$n); // count how many cells are always minimally crossed in one line
+
     // The line has to cross either the left border of the cell or the top border
     // Verify if such thing happens.
 
     for ($row=0; $row<$n; $row++) {
         $crossedInLine = 0; // count each row separately
-        
+
         for ($column=$columnStart; $column < $m; $column++) {
             // position of vertical crossing point
             // X is same for both therefor we can compare just Y (vertical position)
@@ -79,6 +81,14 @@ function countBlackCells($n, $m) {
                 // if we already crossed few, but this cell is not crossed, 
                 // we know that no more will be crossed in this line
                 break;
+            }
+
+            // speed jump ;)
+            // we know how many are minimally crossed in one line - don't iterate -> jump
+            if ($crossedInLine == 1) {
+                $crossed       += $inOneLineMin-1;
+                $crossedInLine += $inOneLineMin-1;
+                $column        += $inOneLineMin-1;
             }
         }
 
